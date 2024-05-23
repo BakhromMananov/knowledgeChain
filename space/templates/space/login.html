@@ -1,0 +1,300 @@
+{% extends 'space/base.html' %}
+{% load static %}
+
+{% block title %}KnowledgeChain {% endblock %}
+
+{% block sidebar1 %}
+<div class="sidebar1 ">
+    <div class="sidebar1-filter one elem">
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/star.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>Newest and Recent</h5>
+                <p>Find the latest update</p>
+            </div>
+        </div>
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/fire.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>Newest and Recent</h5>
+                <p>Find the latest update</p>
+            </div>
+        </div>
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/add-friend.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>Newest and Recent</h5>
+                <p>Find the latest update</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar1-filter two elem">
+        <h5 class="sidebar1-filter__title">Popular Tags</h5>
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/js.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#JavaScript</h5>
+                <p><span>82,645</span> Posted by this tag</p>
+            </div>
+        </div>
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/bitcoin.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#Bitcoin</h5>
+                <p><span>65,523</span>Trending</p>
+            </div>
+        </div>
+
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/design.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#Design</h5>
+                <p><span>51,354</span>Trending in Kyrgyzstan</p>
+            </div>
+        </div>
+
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/innovation.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#Innovation</h5>
+                <p><span>48,026</span>Posted by this tag</p>
+            </div>
+        </div>
+
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/video.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#Tutorial</h5>
+                <p><span>51,354</span>Trending in Kyrgyzstan</p>
+            </div>
+        </div>
+
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/business.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#Businesses</h5>
+                <p><span>82,645</span>Posted by this tag</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="sidebar1-filter three elem">
+        <h5 class="sidebar1-filter__title">Pinned Group </h5>
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/js.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#JavaScript</h5>
+                <p><span>82,645</span> Posted by this tag</p>
+            </div>
+        </div>
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/bitcoin.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#Bitcoin</h5>
+                <p><span>65,523</span>Trending</p>
+            </div>
+        </div>
+
+        <div class="sidebar1-filter__item">
+            <img class="sidebar1-img" src="{% static 'space/img/design.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#Design</h5>
+                <p><span>51,354</span>Trending in Kyrgyzstan</p>
+            </div>
+        </div>
+
+        <div class="sidebar1-filter__item">
+            <img class="nav-btn" src="{% static 'space/img/blog.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#blogging</h5>
+                <p><span>48,026</span>Posted by this tag</p>
+            </div>
+        </div>
+
+        <div class="sidebar1-filter__item">
+            <img class="nav-btn" src="{% static 'space/img/video.png' %}" alt=""> </a>
+            <div class="filter-item__dets">
+                <h5>#tutorial</h5>
+                <p><span>51,354</span>Trending in Kyrgyzstan</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block main %}
+    <div class="overlay"></div>
+    <div class="main ">
+        <form class="log-form elem" method="post">
+            <div class="xmark">X</div>
+            {% csrf_token %}
+            
+            <div class="form-error">{{form.non_field_errors}}</div>
+            {% for f in form %}
+            
+            <p><label class="login-control" for="{{f.id_for_label}}">{{f.label}}</label>{{f}}</p>
+            {% endfor %}
+            <button class="login__btn" type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block sidebar2 %}
+<div class="sidebar2">
+    <div class="sidebar2-filter elem">
+        <h5 class="sidebar2-filter__title">Meetups </h5>
+        <div class="sidebar2-filter__item">
+            <div class="filter2-item__date">
+                <p class="month">feb</p>
+                <p class="date">7</p>
+            </div>
+            <div class="filter2-item__dets">
+                <h5>UIHUT - Crunchbase company Profile</h5>
+                <div class="filter2-company__details">
+                    <img class="filter2-company__logo" src="https://i.pinimg.com/originals/f4/cf/ec/f4cfec4f3b4bbf24798b26aa4a5508f2.png" alt="">
+                    <div class="filter2-company__title">
+                        UIHUT
+                    </div>
+                    <div class="filter2-company__address">
+                        Osh, Kyrgyzstan
+                    </div>
+                </div>
+                <ul class="filter2-company__tags">
+                    <li>
+                        <a href="" class="company__tag">
+                            Remote
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="company__tag">
+                            Remote
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="company__tag">
+                            Remote
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar2-filter__item">
+            <div class="filter2-item__date">
+                <p class="month">feb</p>
+                <p class="date">3</p>
+            </div>
+            <div class="filter2-item__dets">
+                <h5>Design Meetups USA | Dribble</h5>
+                <div class="filter2-company__details">
+                    <img class="filter2-company__logo" src="https://i.pinimg.com/originals/f4/cf/ec/f4cfec4f3b4bbf24798b26aa4a5508f2.png" alt="">
+                    <div class="filter2-company__title">
+                        UIHUT
+                    </div>
+                    <div class="filter2-company__address">
+                        Osh, Kyrgyzstan
+                    </div>
+                </div>
+                <ul class="filter2-company__tags">
+                    <li>
+                        <a href="" class="company__tag">
+                            Remote
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="company__tag">
+                            Remote
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="company__tag">
+                            Remote
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar2-filter__item">
+            <div class="filter2-item__date">
+                <p class="month">feb</p>
+                <p class="date">7</p>
+            </div>
+            <div class="filter2-item__dets">
+                <h5>UIHUT - Crunchbase company Profile</h5>
+                <div class="filter2-company__details">
+                    <img class="filter2-company__logo" src="https://i.pinimg.com/originals/f4/cf/ec/f4cfec4f3b4bbf24798b26aa4a5508f2.png" alt="">
+                    <div class="filter2-company__title">
+                        UIHUT
+                    </div>
+                    <div class="filter2-company__address">
+                        Osh, Kyrgyzstan
+                    </div>
+                </div>
+                <ul class="filter2-company__tags">
+                    <li>
+                        <a href="" class="company__tag">
+                            Remote
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="company__tag">
+                            Remote
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="company__tag">
+                            Remote
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar2-filter elem">
+        <h5 class="sidebar2-filter__title">Podcasts</h5>
+        <div class="sidebar2-filter__item">
+            <img class="sidebar2-pod__img" src="{% static 'space/img/heart.png' %}" alt="">
+            <div class="filter2-pod__dets">
+                <h5>UIHUT - Crunchbase company Profile</h5>
+                <div class="filter2-pod__author">
+                    by <span>Michael Hansen</span>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar2-filter__item">
+            <img class="sidebar2-pod__img" src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg" alt="">
+            <div class="filter2-pod__dets">
+                <h5>UIHUT - Crunchbase company Profile</h5>
+                <div class="filter2-pod__author">
+                    by <span>Michael Hansen</span>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar2-filter__item">
+            <img class="sidebar2-pod__img" src="https://www.individualhealthsolutions.com/wp-content/uploads/2021/08/logo-or-icon-podcast-with-white-background-graphic-vector-25902207-948x1024.jpeg" alt="">
+            <div class="filter2-pod__dets">
+                <h5>UIHUT - Crunchbase company Profile</h5>
+                <div class="filter2-pod__author">
+                    by <span>Michael Hansen</span>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar2-filter__item">
+            <img class="sidebar2-pod__img" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/01/1831bf02-1c6e-4d28-9a2d-6016c40a4ce0-e1515368137214.jpg?auto=format&q=60&fit=max&w=930" alt="">
+            <div class="filter2-pod__dets">
+                <h5>UIHUT - Crunchbase company Profile</h5>
+                <div class="filter2-pod__author">
+                    by <span>Michael Hansen</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
